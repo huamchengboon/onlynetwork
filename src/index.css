@@ -1,0 +1,308 @@
+@import "tailwindcss";
+
+/* ========================================
+   TECHNICAL MANUAL DESIGN SYSTEM
+   Import Design System Files
+   ======================================== */
+@import './styles/design-tokens.css';
+@import './styles/typography.css';
+@import './styles/layout.css';
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+body {
+    font-family: var(--f-body);
+    color: var(--c-ink);
+    background-color: var(--c-canvas);
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+.heading-pixel {
+    font-family: var(--f-heading);
+    color: var(--c-blueprint);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.text-tech {
+    font-family: var(--f-tech);
+    color: var(--c-blueprint);
+    text-transform: uppercase;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+.btn-blueprint {
+    font-family: var(--f-tech);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--c-blueprint);
+    background-color: var(--c-canvas);
+    border: 1px solid var(--c-blueprint);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+.btn-blueprint:hover {
+    color: var(--c-canvas);
+    background-color: var(--c-blueprint);
+}
+
+.btn-blueprint.danger {
+    color: #DC2626;
+    border-color: #DC2626;
+}
+
+.btn-blueprint.danger:hover {
+    color: var(--c-canvas);
+    background-color: #DC2626;
+}
+
+/* ========================================
+   TOOLBAR BUTTONS (Cisco Packet Tracer style)
+   ======================================== */
+.toolbar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    margin: 0;
+    background-color: var(--c-canvas);
+    border: none;
+    border-radius: 0;
+    color: var(--c-ink);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    position: relative;
+}
+
+.toolbar-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid transparent;
+    border-radius: 0;
+    transition: all var(--transition-fast);
+}
+
+.toolbar-btn:hover {
+    background-color: var(--c-blueprint-lighter);
+    color: var(--c-blueprint);
+}
+
+.toolbar-btn:hover::before {
+    border-color: var(--c-blueprint);
+    opacity: 0.3;
+}
+
+.toolbar-btn.active {
+    background-color: var(--c-blueprint);
+    color: var(--c-canvas);
+}
+
+.toolbar-btn.active::before {
+    border-color: var(--c-blueprint);
+    opacity: 1;
+}
+
+.toolbar-btn:active {
+    background-color: var(--c-blueprint-active);
+    transform: scale(0.95);
+}
+
+/* ========================================
+   CARDS / CONTAINERS
+   ======================================== */
+.card-blueprint {
+    background-color: var(--c-canvas);
+    border: 1px solid var(--c-blueprint);
+    padding: var(--space-md);
+}
+
+/* ========================================
+   DEVICE PALETTE (Cisco Packet Tracer style)
+   ======================================== */
+.device-category-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    background-color: var(--c-canvas);
+}
+
+.device-category-btn:hover {
+    background-color: var(--c-blueprint-lighter) !important;
+}
+
+.device-category-btn:active {
+    transform: scale(0.98);
+}
+
+.device-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    background-color: var(--c-canvas);
+}
+
+.device-item:hover {
+    background-color: var(--c-blueprint-lighter) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(77, 107, 254, 0.2);
+}
+
+.device-item:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   FORM INPUTS
+   ======================================== */
+.input-blueprint {
+    font-family: var(--f-tech);
+    font-size: 0.75rem;
+    color: var(--c-ink);
+    background-color: var(--c-canvas);
+    border: 1px solid var(--c-blueprint);
+    padding: 0.5rem;
+    width: 100%;
+    outline: none;
+    transition: all 0.15s ease-in-out;
+}
+
+.input-blueprint:focus {
+    box-shadow: 0 0 0 2px rgba(77, 107, 254, 0.3);
+}
+
+.input-blueprint::placeholder {
+    color: var(--c-blueprint);
+    opacity: 0.4;
+}
+
+select.input-blueprint {
+    cursor: pointer;
+}
+
+/* ========================================
+   VERTICAL TEXT (for labels)
+   ======================================== */
+.text-vertical {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: var(--f-tech);
+    color: var(--c-blueprint);
+    text-transform: uppercase;
+    font-size: 0.625rem;
+    letter-spacing: 0.1em;
+}
+
+/* ========================================
+   REACT FLOW OVERRIDES
+   ======================================== */
+.react-flow__controls {
+    border: 1px solid var(--c-blueprint) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.react-flow__controls-button {
+    border: none !important;
+    border-bottom: 1px solid var(--c-blueprint) !important;
+    border-radius: 0 !important;
+    background: var(--c-canvas) !important;
+    fill: var(--c-blueprint) !important;
+}
+
+.react-flow__controls-button:hover {
+    background: var(--c-blueprint) !important;
+    fill: var(--c-canvas) !important;
+}
+
+.react-flow__controls-button:last-child {
+    border-bottom: none !important;
+}
+
+/* Edge (connection line) styling */
+.react-flow__edge-path {
+    stroke: var(--c-blueprint) !important;
+    stroke-width: 2px !important;
+}
+
+.react-flow__edge.selected .react-flow__edge-path,
+.react-flow__edge:hover .react-flow__edge-path {
+    stroke-width: 3px !important;
+}
+
+/* Connection line while dragging */
+.react-flow__connection-path {
+    stroke: var(--c-blueprint) !important;
+    stroke-width: 2px !important;
+    stroke-dasharray: 5 5 !important;
+}
+
+/* Edge markers (arrows) */
+.react-flow__edge-path-marker {
+    fill: var(--c-blueprint) !important;
+}
+
+/* Handle styling */
+.react-flow__handle {
+    background: var(--c-blueprint) !important;
+    border: none !important;
+    width: 8px !important;
+    height: 8px !important;
+}
+
+/* Handle when connected */
+.react-flow__handle.connected {
+    background: #22c55e !important;
+}
+
+/* Handle when connection is invalid */
+.react-flow__handle.invalid {
+    background: #ef4444 !important;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 8px rgba(37, 99, 235, 0.3), 0 0 16px rgba(37, 99, 235, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 12px rgba(37, 99, 235, 0.4), 0 0 24px rgba(37, 99, 235, 0.3);
+    }
+}

@@ -1,0 +1,186 @@
+/* ========================================
+   TYPOGRAPHY SYSTEM
+   Technical Manual Design Language
+   ======================================== */
+
+/* ========================================
+   BASE TYPOGRAPHY
+   ======================================== */
+body {
+    font-family: var(--f-body);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    color: var(--c-ink);
+    background-color: var(--c-canvas);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   HEADINGS (The "Digital" Voice)
+   ======================================== */
+h1, h2, h3, h4, h5, h6,
+.heading-xl,
+.heading-lg,
+.heading-md,
+.heading-sm {
+    font-family: var(--f-heading);
+    color: var(--c-blueprint);
+    text-transform: uppercase;
+    letter-spacing: var(--ls-heading);
+    line-height: var(--lh-heading);
+    font-weight: normal;
+    margin: 0;
+}
+
+h1, .heading-xl {
+    font-size: var(--fs-heading-xl);
+}
+
+h2, .heading-lg {
+    font-size: var(--fs-heading-lg);
+}
+
+h3, .heading-md {
+    font-size: var(--fs-heading-md);
+}
+
+h4, h5, h6, .heading-sm {
+    font-size: var(--fs-heading-sm);
+}
+
+/* ========================================
+   BODY TEXT (The "Manual" Voice)
+   ======================================== */
+p, .text-body {
+    font-family: var(--f-body);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    color: var(--c-ink);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.text-body-sm {
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body);
+}
+
+/* ========================================
+   SUBTITLE / TAGLINE
+   ======================================== */
+.subtitle,
+.text-subtitle {
+    font-family: var(--f-subtitle);
+    font-style: italic;
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    color: var(--c-ink);
+}
+
+/* ========================================
+   LABELS & TECHNICAL DATA (The "Machine" Voice)
+   ======================================== */
+.label,
+.text-label,
+.text-tech {
+    font-family: var(--f-tech);
+    font-size: var(--fs-label);
+    color: var(--c-blueprint);
+    text-transform: uppercase;
+    letter-spacing: var(--ls-label);
+    line-height: var(--lh-label);
+}
+
+.text-tech {
+    font-size: var(--fs-tech);
+    letter-spacing: var(--ls-tech);
+}
+
+/* SNAKE_CASE for multi-word labels */
+.label-snake {
+    font-family: var(--f-tech);
+    font-size: var(--fs-label);
+    color: var(--c-blueprint);
+    text-transform: uppercase;
+    letter-spacing: var(--ls-label);
+    font-variant-ligatures: none;
+}
+
+/* ========================================
+   DROP CAPS
+   ======================================== */
+.dropcap-container p:first-of-type::first-letter,
+.text-dropcap::first-letter {
+    font-size: var(--fs-dropcap);
+    float: left;
+    line-height: 1;
+    margin-right: var(--space-sm);
+    margin-top: var(--space-xs);
+    font-family: var(--f-body);
+    color: var(--c-ink);
+    font-weight: normal;
+}
+
+/* ========================================
+   VERTICAL TEXT (for labels and figure numbers)
+   ======================================== */
+.text-vertical-left {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: var(--f-tech);
+    color: var(--c-blueprint);
+    text-transform: uppercase;
+    font-size: var(--fs-label);
+    letter-spacing: var(--ls-label);
+    text-align: center;
+}
+
+.text-vertical-right {
+    writing-mode: vertical-rl;
+    transform: rotate(0deg);
+    font-family: var(--f-tech);
+    color: var(--c-blueprint);
+    text-transform: uppercase;
+    font-size: var(--fs-label);
+    letter-spacing: var(--ls-label);
+    text-align: center;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-ink {
+    color: var(--c-ink);
+}
+
+.text-blueprint {
+    color: var(--c-blueprint);
+}
+
+.text-ink-light {
+    color: var(--c-ink-light);
+}
+
+.text-ink-lighter {
+    color: var(--c-ink-lighter);
+}
